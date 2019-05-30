@@ -63,13 +63,30 @@ class Header extends Component {
 
   render() {
     return (
-      <AppBar position="static" color="default">
+      <AppBar position="fixed" style={{ backgroundColor: "#4297ff" }}>
         <Toolbar>
-          <Typography variant="h6" color="inherit" style={{ flexGrow: 1 }}>
-            QAIN
-          </Typography>
-          <div>
+          <div style={{ marginRight: "50px", width: "97px", height: "35px" }}>
+            <img src="/logo@3x.png" style={{ maxWidth: "100%" }} />
+          </div>
+          <div style={{ flexGrow: 1 }}>
+            <Button color="inherit">
+              Question
+            </Button>
+            <Button color="inherit">
+              Answer
+            </Button>
+            <Button color="inherit">
+              Notice
+            </Button>
+            <Button color="inherit">
+              Info
+            </Button>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {/* 언어 설정 */}
+            <div style={{ width: "14px", height: "14px" }}>
+              <img src="/icon-language@3x.png" style={{ maxWidth: "100%" }} />
+            </div>
             <Button
               color="inherit"
               onClick={(e) => this.onLanguageButtonClicked(e)}
@@ -88,7 +105,7 @@ class Header extends Component {
               }
             </StyledMenu>
           </div>
-          <Button color="inherit">
+          <Button color="inherit" style={{ background: "#ff7700", boxShadow: "0 6px 7px 0 rgba(74, 45, 19, 0.2)", padding: "5px 25px 5px 25px", borderRadius: "25px" }}>
             <FormattedHTMLMessage id="header_login_title" />
           </Button>
         </Toolbar>

@@ -16,8 +16,8 @@ const initialState = {
   account: null,
   userSiteLanguage: navigator.language.split('-')[0],
   siteLanguages: {
-    ko: "한국어",
-    en: "English",
+    ko: "KOR",
+    en: "EN",
   },
 };
 
