@@ -45,9 +45,11 @@ const FilterCard = (props) => {
 };
 
 const mapStateToProps = state => ({
+  categories: state.app.categories,
 });
 
 const mapDispatchToProps = dispatch => ({
+  appActions: bindActionCreators(appActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterCard);

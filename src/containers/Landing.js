@@ -5,11 +5,15 @@ import { compose } from "recompose";
 import { withRouter } from "react-router";
 import TopBar from "../components/landing/TopBar"
 import { Container, Grid, Button, Divider } from "@material-ui/core"
+import axios from 'axios';
 
 import * as appActions from "../redux/reducers/app";
 import QuestionCard from '../components/landing/QuestionCard';
 import MyQuestionCard from "../components/landing/MyQuestionCard";
 import FilterCard from "../components/landing/FilterCard"
+
+
+const API_URL = "http://104.156.238.171:5000";
 
 class Landing extends Component {
   constructor(props) {
@@ -17,6 +21,9 @@ class Landing extends Component {
   }
 
   componentDidMount = () => {
+    axios.get(`${API_URL}/categories`).then((res) => {
+      appActions.setCategories(res)
+    });
   }
 
 
