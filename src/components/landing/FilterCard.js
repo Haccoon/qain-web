@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { compose } from "recompose";
 import { withRouter } from "react-router";
-import { Container, Grid, Button, Paper } from "@material-ui/core"
+import { Container, Grid, Button, Paper, Divider, Checkbox, FormControlLabel } from "@material-ui/core"
 // import * as appActions from "../../redux/reducers/app";
 
 const styles = {
@@ -38,8 +38,29 @@ const FilterCard = (props) => {
   }
 
   return (
-    <Paper style={{ width: "254px", height: "340px" }}>
-      필터 카드
+    <Paper style={{ width: "244px", height: "330px", padding: "20px" }}>
+      <div style={{ fontSize: "20px", fontWeight: "bold", color: "#333333" }}>
+        필터
+      </div>
+      <Divider style={{ margin: "20px auto 20px auto" }} />
+      <div style={{ fontSize: "14px", fontWeight: 500, color: "#333333" }}>
+        카테고리
+      </div>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ width: "60%" }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                value="checkedB"
+                color="primary"
+              />
+            }
+            label="피드"
+            style={{ fontSize: "14px", color: "#666666" }}
+          />
+        </div>
+        <div style={{ width: "40%", textAlign: "right", fontSize: "14px", color: "#4297ff" }}>254</div>
+      </div>
     </Paper>
   );
 };
@@ -49,7 +70,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  appActions: bindActionCreators(appActions, dispatch),
+  // appActions: bindActionCreators(appActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterCard);

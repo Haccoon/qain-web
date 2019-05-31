@@ -12,7 +12,6 @@ import QuestionCard from '../components/landing/QuestionCard';
 import MyQuestionCard from "../components/landing/MyQuestionCard";
 import FilterCard from "../components/landing/FilterCard"
 
-
 const API_URL = "http://104.156.238.171:5000";
 
 class Landing extends Component {
@@ -22,7 +21,9 @@ class Landing extends Component {
 
   componentDidMount = () => {
     axios.get(`${API_URL}/categories`).then((res) => {
-      appActions.setCategories(res)
+      if (res.status === 200 && res.statusText === "OK") {
+        this.props.appActions.setCategories(res.data)
+      }
     });
   }
 
@@ -38,16 +39,17 @@ class Landing extends Component {
     return (
       <div className="Landing" style={{ width: "100%", height: "100%", backgroundColor: "#f4f4f4" }}>
         <Container>
-          <div style={{ position: "fixed", top: "100px" }}>
+          <div style={{ position: "fixed", top: "230px" }}>
             <FilterCard />
           </div>
           <div>
             <TopBar />
             <Divider />
           </div>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "30px" }}>
             <div style={{ width: "70%" }}>
               <MyQuestionCard />
+              <QuestionCard />
             </div>
           </div>
         </Container>

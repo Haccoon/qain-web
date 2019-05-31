@@ -31,7 +31,7 @@ const QuestionCard = (props) => {
   }
 
   return (
-    <Card>
+    <Card style={{ marginTop: "30px", padding: "10px" }}>
       <CardHeader
         avatar={
           <Avatar aria-label="Recipe">
@@ -43,18 +43,22 @@ const QuestionCard = (props) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title="Chris Lynam"
+        subheader="United States of America"
       />
       <CardMedia
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
+        <div style={{ fontSize: "22px", fontWeight: "bold", marginBottom: "10px" }}>
+          가장 인상적인 종이 접기 조각은 무엇입니까?
+        </div>
+        <div style={{ fontSize: "16px", lineHeight: 1.5 }}>
+          나는 20 년 넘게 사람들의 집안을 들락날락하고 있으며, 맞춤 주택에서 모든 종류의 레이아웃을 보았으며
+          문제의 일부를 바로 잡기 위해 전화를 받았습니다. 그러나 그들 중 일부는 당신이 바꿀 수없는 유형입니다.
+          이것은 주로 부유 한 사람들입니다.
+        </div>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="Add to favorites">

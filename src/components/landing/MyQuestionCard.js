@@ -38,27 +38,25 @@ const MyQuestionCard = (props) => {
   }
 
   return (
-    <Paper>
-      <Grid container spacing={2}>
-        <Grid item>
-          <Avatar />
-        </Grid>
-          <Grid item xs container direction="column" spacing={2}>
-            <Grid item>
-              <Typography gutterBottom variant="subtitle1">
-                신유림님
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-                South Korea
-              </Typography>
-            </Grid>
+    <Paper style={{ padding: "20px" }}>
+      <div style={{ display: "flex", alignContent: "center" }}>
+        <Grid container spacing={2} style={{ width: "30%" }} alignItems="center">
+          <Grid item>
+           <Avatar />
           </Grid>
-          <Grid item xs>
-            <div style={{ fontSize: "24px", color: "#999999" }}>
-              동길님의 질문 또는 링크는 무엇입니까?
-            </div>
+          <Grid item>
+            <Typography gutterBottom variant="subtitle1">
+              신유림님
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              South Korea
+            </Typography>
           </Grid>
-      </Grid>
+          </Grid>
+          <div style={{ fontSize: "24px", color: "#999999", width: "70%", textAlign: "center", margin: "auto" }}>
+            동길님의 질문 또는 링크는 무엇입니까?
+          </div>
+        </div>
     </Paper>
   );
 };
